@@ -5,10 +5,14 @@ from pymongo.server_api import ServerApi
 from datetime import datetime, timezone
 import os
 from dotenv import load_dotenv
-load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Permite peticiones desde App Inventor o el ESP32
+
+#DEV MODE ENV VAR
+if os.environ.get("FLASK_ENV") == "development":
+    from dotenv import load_dotenv
+    load_dotenv()
 
 # Conexión a MongoDB
 uri = os.getenv("MONGO_URI")  # lee desde variable de entorno
