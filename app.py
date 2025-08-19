@@ -98,6 +98,6 @@ def verificar_usuario():
         return jsonify({"status": "error", "mensaje": "Usuario o contraseña incorrectos"}), 401
 
 
-#This is just for development
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+# #This is just for development
+# if __name__ == '__main__':
+#     app.run(debug=True, host='0.0.0.0', port=5000)
